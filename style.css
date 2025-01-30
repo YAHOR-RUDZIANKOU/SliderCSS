@@ -133,10 +133,12 @@ body {
   align-items: center;
   padding-right: 5px;
 }
-.navigation label{
+
+.navigation label {
   padding: 5px;
   cursor: pointer;
 }
+
 .bar {
   border: 3px solid #6495ed;
   width: 20px;
@@ -158,7 +160,7 @@ input[name="slide"] {
 
 .first__row-wrap {
   flex-wrap: nowrap;
-  transition: transform 0.5s linear;
+  transition: transform 0.7s linear;
 }
 
 .subtitle {
@@ -191,33 +193,66 @@ input[name="slide"] {
   transform: translateY(-75%);
 }
 
-.second__row {
+.second__row-wrap {
   height: 42.5px;
   overflow: hidden;
 }
 
 .subtitle {
-  padding: 10px;
+  padding: 10px 10px 10px 0px;
 }
 
-.second__row-wrap{
-  transition: transform 0.5s linear;
+.second__subtitles {
+  transition: transform 0.7s linear;
 }
 
-#slide1:checked ~ .slider__row .second__row .second__row-wrap {
-  transform: translateY(0px);
+#slide1:checked ~ .slider__row .second__row-wrap .second__subtitles {
+  transform: translateY(0);
 }
 
-#slide2:checked ~ .slider__row .second__row .second__row-wrap {
+#slide2:checked ~ .slider__row .second__row-wrap .second__subtitles {
   transform: translateY(-58px);
 }
 
-#slide3:checked ~ .slider__row .second__row .second__row-wrap {
+#slide3:checked ~ .slider__row .second__row-wrap .second__subtitles {
   transform: translateY(-116px);
 }
 
-#slide4:checked ~ .slider__row .second__row .second__row-wrap {
+#slide4:checked ~ .slider__row .second__row-wrap .second__subtitles {
   transform: translateY(-174px);
 }
 
+@media (max-width: 700px) {
+  .subtitle {
+    font-size: 15px;
+  }
 
+  #slide1:checked ~ .slider__row .second__row-wrap .second__subtitles {
+    transform: translateY(0);
+  }
+
+  #slide2:checked ~ .slider__row .second__row-wrap .second__subtitles {
+    transform: translateY(-42px);
+  }
+
+  #slide3:checked ~ .slider__row .second__row-wrap .second__subtitles {
+    transform: translateY(-84px);
+  }
+
+  #slide4:checked ~ .slider__row .second__row-wrap .second__subtitles {
+    transform: translateY(-126px);
+  }
+
+  .slider__row {
+    gap: 20px;
+  }
+
+  .second__row {
+    flex-direction: column-reverse;
+    gap: 2px;
+  }
+
+  .navigation {
+    margin: 0 auto;
+  }
+}
